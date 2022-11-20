@@ -21,7 +21,7 @@ export const NoteCardHeader = styled.header`
 
 export const NoteCardTitle = styled.h3`
   font-size: 1.2em;
-  margin-right: 12px;
+  margin: 0;
 `;
 
 export const NoteCardText = styled.p`

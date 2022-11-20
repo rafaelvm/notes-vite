@@ -1,4 +1,4 @@
-import { NoteListContainer, NoteListItem } from "./styles";
+import { NoteListContainer } from "./styles";
 import NoteCard, { NoteCardProps } from "../NoteCard";
 
 type NoteListProps = {
@@ -11,9 +11,9 @@ function NoteList({ notesList, removeNote }: NoteListProps) {
     <NoteListContainer>
       {notesList.map((item, index) => {
         return (
-          <NoteListItem key={index} onClick={() => removeNote(item)}>
+          <div key={index} onClick={() => removeNote(item)}>
             <NoteCard title={item.title} description={item.description} />
-          </NoteListItem>
+          </div>
         );
       })}
     </NoteListContainer>
