@@ -6,5 +6,4 @@ export const TextareaWrapper = styled.textarea`
   border: none;
   background-color: var(--bottom-details);
   font-family: Arial, Helvetica, sans-serif;
-  font-weight: 100;
 `;

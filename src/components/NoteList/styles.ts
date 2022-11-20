@@ -6,8 +6,7 @@ export const NoteListContainer = styled.ul`
   display: grid;
   grid-template-columns: auto auto auto auto auto;
   list-style-type: none;
-  padding-left: 24px;
-  padding-top: 24px;
+  padding: 24px 0 0 24px;
 `;
 
 export const NoteListItem = styled.li`
