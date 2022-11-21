@@ -1,9 +1,4 @@
-import {
-  NoteCardContainer,
-  NoteCardHeader,
-  NoteCardTitle,
-  NoteCardText,
-} from "./styles";
+import { NoteCardContainer, NoteCardTitle, NoteCardText } from "./styles";
 
 export type NoteCardProps = {
   title: string;
@@ -13,9 +8,7 @@ export type NoteCardProps = {
 function NoteCard({ title, description }: NoteCardProps) {
   return (
     <NoteCardContainer>
-      <NoteCardHeader>
-        <NoteCardTitle>{title}</NoteCardTitle>
-      </NoteCardHeader>
+      <NoteCardTitle>{title}</NoteCardTitle>
       <NoteCardText>{description}</NoteCardText>
     </NoteCardContainer>
   );

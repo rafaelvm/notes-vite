@@ -33,16 +33,16 @@ export function Form() {
     <>
       <FormContainer>
         <InputText
-          placeholder="Escreva sue título"
+          placeholder="Escreva seu título"
           value={note.title}
           onChange={handleTitle}
         />
         <Textarea
           placeholder="Escreva sua nota"
-          rows="16"
+          rows="8"
           value={note.description}
           onChange={handleDescription}
-          maxLength="255"
+          maxLength="120"
         />
         <Button
           labelDescription="Criar nota"
