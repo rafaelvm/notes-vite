@@ -6,6 +6,7 @@ const GlobalStyle = createGlobalStyle`
   padding: 0;
   box-sizing: border-box;
   height: auto;
+  background: #F8F8F8;
 }
 
 html { 
@@ -16,6 +17,8 @@ html {
     font-size: 87.5%;
   }
 }
+
+
 
 button {
   cursor: pointer;
@@ -44,14 +47,6 @@ button {
 
 .container {
   margin: 12px;
-}
-
-:root {
-  --primary: #58a4b0;
-  --secondary: #373f51;
-  --secondary-active: #cccccc;
-  --bottom: #ffffff;
-  --bottom-details: #ececec;
 }
 
 `;

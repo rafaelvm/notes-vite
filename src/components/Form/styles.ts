@@ -5,4 +5,5 @@ export const FormContainer = styled.form`
   padding: 12px 40px;
   display: flex;
   flex-direction: column;
+  border-radius: 4px;
 `;
