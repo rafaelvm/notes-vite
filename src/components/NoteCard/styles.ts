@@ -5,7 +5,7 @@ export const NoteCardContainer = styled.section`
   border-radius: 4px;
   padding: 16px;
   word-break: break-all;
-  height: 155px;
+  height: 210px;
 `;
 
 export const NoteCardTitle = styled.h3`

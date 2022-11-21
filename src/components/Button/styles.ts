@@ -10,7 +10,6 @@ export const ButtonContainer = styled.button`
   background-color: var(--secondary);
   color: white;
   border-radius: 4px;
-  cursor: pointer;
   opacity: 1;
 
   &:hover {

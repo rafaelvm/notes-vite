@@ -36,6 +36,7 @@ export function Form() {
           placeholder="Escreva seu título"
           value={note.title}
           onChange={handleTitle}
+          maxLength="30"
         />
         <Textarea
           placeholder="Escreva sua nota"
@@ -48,6 +49,7 @@ export function Form() {
           labelDescription="Criar nota"
           onClick={sendForm}
           type="button"
+          disabled={!note?.title || !note?.description}
         />
       </FormContainer>
 
