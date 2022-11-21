@@ -18,7 +18,6 @@ html {
 }
 
 
-
 button {
   cursor: pointer;
 }
@@ -31,14 +30,17 @@ button {
     opacity: 0.2;
   }
 }
+
 ::-webkit-scrollbar {
   width: 8px;
   background: #FFFFFF;
   border-radius: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background-color: #FFFFFF;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #D1D3D7;
   border-radius: 8px;
