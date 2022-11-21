@@ -11,9 +11,12 @@ function NoteList({ notesList, removeNote }: NoteListProps) {
     <NoteListContainer>
       {notesList.map((item, index) => {
         return (
-          <div key={index} onClick={() => removeNote(item)}>
-            <NoteCard title={item.title} description={item.description} />
-          </div>
+          <NoteCard
+            key={index}
+            title={item.title}
+            description={item.description}
+            onRemove={() => removeNote(item)}
+          />
         );
       })}
     </NoteListContainer>

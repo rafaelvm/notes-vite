@@ -1,14 +1,25 @@
-import { NoteCardContainer, NoteCardTitle, NoteCardText } from "./styles";
+import {
+  NoteCardContainer,
+  NoteCardTitle,
+  NoteCardText,
+  TitleWrapper,
+} from "./styles";
+import closeImg from "../../assets/close.svg";
 
 export type NoteCardProps = {
   title: string;
   description: string;
+  onRemove?: () => void;
 };
 
-function NoteCard({ title, description }: NoteCardProps) {
+function NoteCard({ title, description, onRemove }: NoteCardProps) {
   return (
     <NoteCardContainer>
-      <NoteCardTitle>{title}</NoteCardTitle>
+      <TitleWrapper>
+        <NoteCardTitle>{title}</NoteCardTitle>
+        <img src={closeImg} alt="Fechar modal" onClick={onRemove} />
+      </TitleWrapper>
+
       <NoteCardText>{description}</NoteCardText>
     </NoteCardContainer>
   );

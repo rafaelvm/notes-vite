@@ -7,7 +7,10 @@ export const NoteCardContainer = styled.section`
     padding: 16px;
     word-break: break-all;
     height: 210px;
-    cursor: pointer;
+
+    &:hover {
+      opacity: 0.95;
+    }
   `}
 `;
 
@@ -26,5 +29,21 @@ export const NoteCardText = styled.p`
     color: ${theme.colors.white};
     margin-top: 6px;
     font-size: 1.2rem;
+  `}
+`;
+
+export const TitleWrapper = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: ${theme.colors.secondary};
+    gap: 12px;
+
+    img {
+      background-color: ${theme.colors.secondary};
+      color: ${theme.colors.white};
+      cursor: pointer;
+    }
   `}
 `;
