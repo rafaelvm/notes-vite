@@ -5,6 +5,7 @@ import {
   TitleWrapper,
 } from "./styles";
 import closeImg from "../../assets/close.svg";
+import { autoCapitalize } from "../../utils/autoCapitalize";
 
 export type NoteCardProps = {
   title: string;
@@ -16,11 +17,11 @@ function NoteCard({ title, description, onRemove }: NoteCardProps) {
   return (
     <NoteCardContainer>
       <TitleWrapper>
-        <NoteCardTitle>{title}</NoteCardTitle>
+        <NoteCardTitle>{autoCapitalize(title)}</NoteCardTitle>
         <img src={closeImg} alt="Fechar modal" onClick={onRemove} />
       </TitleWrapper>
 
-      <NoteCardText>{description}</NoteCardText>
+      <NoteCardText>{autoCapitalize(description)}</NoteCardText>
     </NoteCardContainer>
   );
 }
