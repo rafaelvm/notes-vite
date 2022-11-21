@@ -54,6 +54,8 @@ export function Form() {
           labelDescription="Criar nota"
           onClick={sendForm}
           type="button"
+          variant="flat"
+          size="small"
           disabled={!note?.title || !note?.description}
         />
       </FormContainer>
