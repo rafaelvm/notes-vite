@@ -4,6 +4,7 @@ import Button from "../Button";
 import InputText from "../InputText";
 import NoteList from "../NoteList";
 import Textarea from "../Textarea";
+import { toast } from "react-toastify";
 
 export function Form() {
   const [note, setNote] = useState({ title: "", description: "" });
@@ -22,11 +23,15 @@ export function Form() {
       setItemsList((prevState) => [...prevState, note]);
       setNote({ title: "", description: "" });
     }
+
+    toast.success("Nota adicionada com sucesso!");
   }
 
   function removeNote(note) {
     const newArray = itemsList.filter((item) => item.title !== note.title);
     setItemsList(newArray);
+
+    toast.success("Nota excluída com sucesso!");
   }
 
   return (
