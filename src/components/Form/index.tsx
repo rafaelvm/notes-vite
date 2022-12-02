@@ -22,7 +22,7 @@ export function Form() {
   function sendForm() {
     if (note?.title && note?.description) {
       setItemsList((prevState) => [...prevState, note]);
-      setNote({} as NoteCardProps);
+      setNote({ title: "", description: "" });
     }
 
     toast.success("Nota adicionada com sucesso!");
