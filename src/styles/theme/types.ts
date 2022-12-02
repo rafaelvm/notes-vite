@@ -1,7 +1,5 @@
 interface IThemeColors {
-  primary: string;
-  secondary: string;
-  white: string;
+  [key: string]: string;
 }
 
 export interface IThemeProps {
