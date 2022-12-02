@@ -1,34 +1,35 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { FormContainer } from "./styles";
+import { toast } from "react-toastify";
+import { NoteCardProps } from "components/NoteCard";
 import Button from "../Button";
 import InputText from "../InputText";
 import NoteList from "../NoteList";
 import Textarea from "../Textarea";
-import { toast } from "react-toastify";
 
 export function Form() {
-  const [note, setNote] = useState({ title: "", description: "" });
+  const [note, setNote] = useState<NoteCardProps>({} as NoteCardProps);
   const [itemsList, setItemsList] = useState([]);
 
-  function handleTitle(event) {
+  function handleTitle(event: ChangeEvent<HTMLInputElement>) {
     setNote((prevState) => ({ ...prevState, title: event.target.value }));
   }
 
-  function handleDescription(event) {
+  function handleDescription(event: ChangeEvent<HTMLInputElement>) {
     setNote((prevState) => ({ ...prevState, description: event.target.value }));
   }
 
   function sendForm() {
-    if (note.title && note.description) {
+    if (note?.title && note?.description) {
       setItemsList((prevState) => [...prevState, note]);
-      setNote({ title: "", description: "" });
+      setNote({} as NoteCardProps);
     }
 
     toast.success("Nota adicionada com sucesso!");
   }
 
-  function removeNote(note) {
-    const newArray = itemsList.filter((item) => item.title !== note.title);
+  function removeNote(note: NoteCardProps) {
+    const newArray = itemsList.filter((item) => item?.title !== note?.title);
     setItemsList(newArray);
 
     toast.success("Nota excluída com sucesso!");
@@ -39,14 +40,14 @@ export function Form() {
       <FormContainer>
         <InputText
           placeholder="Escreva seu título"
-          value={note.title}
+          value={note?.title}
           onChange={handleTitle}
           maxLength="20"
         />
         <Textarea
           placeholder="Escreva sua nota"
           rows="8"
-          value={note.description}
+          value={note?.description}
           onChange={handleDescription}
           maxLength="120"
         />
