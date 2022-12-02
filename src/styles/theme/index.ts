@@ -1,4 +1,6 @@
-const theme = {
+import { IThemeProps } from "./types";
+
+const theme: IThemeProps = {
   colors: {
     primary: "#7267BF",
     secondary: "#4B4453",

@@ -1,8 +1,8 @@
 import { ThemeProvider } from "styled-components";
 import { Form } from "../src/components/Form";
-import theme from "../src/styles/theme";
-import GlobalStyle from "../src/styles/global";
 import { ToastContainer } from "react-toastify";
+import theme from "./styles/theme";
+import GlobalStyle from "../src/styles/global";
 
 import "react-toastify/dist/ReactToastify.css";
 

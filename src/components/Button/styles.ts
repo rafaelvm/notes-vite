@@ -1,16 +1,17 @@
 import styled, { css } from "styled-components";
+import { IThemeProps } from "styles/theme/types";
 import { ButtonProps } from ".";
 
 const modifiers = {
-  flat: (theme) => css`
+  flat: (theme: IThemeProps) => css`
     background-color: ${theme.colors.primary};
   `,
-  outlined: (theme) => css`
+  outlined: (theme: IThemeProps) => css`
     background-color: ${theme.colors.white};
     border: 2px solid ${theme.colors.primary};
     color: ${theme.colors.primary};
   `,
-  small: (theme) => css`
+  small: () => css`
     width: 8.5rem;
     height: 2.5rem;
   `,
@@ -39,7 +40,7 @@ export const ButtonContainer = styled.button<ButtonProps>`
       opacity: 0.85;
     }
 
-    ${!!size && modifiers[size](theme)};
+    ${!!size && modifiers[size]()};
     ${!!variant && modifiers[variant](theme)};
   `}
 `;
