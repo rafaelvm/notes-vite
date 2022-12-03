@@ -4,12 +4,12 @@ import { ButtonProps } from ".";
 
 const modifiers = {
   flat: (theme: IThemeProps) => css`
-    background-color: ${theme.colors.primary};
+    background-color: ${theme?.colors?.primary};
   `,
   outlined: (theme: IThemeProps) => css`
-    background-color: ${theme.colors.white};
-    border: 2px solid ${theme.colors.primary};
-    color: ${theme.colors.primary};
+    background-color: ${theme?.colors?.white};
+    border: 2px solid ${theme?.colors?.primary};
+    color: ${theme?.colors?.primary};
   `,
   small: () => css`
     width: 8.5rem;
