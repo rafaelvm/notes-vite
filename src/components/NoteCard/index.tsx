@@ -6,14 +6,9 @@ import {
 } from "./styles";
 import closeImg from "../../assets/close.svg";
 import { autoCapitalize } from "../../utils/autoCapitalize";
+import { NoteCardProps } from "./types";
 
-export type NoteCardProps = {
-  title: string;
-  description: string;
-  onRemove?: () => void;
-};
-
-function NoteCard({ title, description, onRemove }: NoteCardProps) {
+export const NoteCard = ({ title, description, onRemove }: NoteCardProps) => {
   return (
     <NoteCardContainer>
       <TitleWrapper>
@@ -24,6 +19,4 @@ function NoteCard({ title, description, onRemove }: NoteCardProps) {
       <NoteCardText>{autoCapitalize(description)}</NoteCardText>
     </NoteCardContainer>
   );
-}
-
-export default NoteCard;
+};

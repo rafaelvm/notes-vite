@@ -1,7 +1,5 @@
 import { Input } from "./styles";
 
-function InputText({ ...rest }) {
+export const InputText = ({ ...rest }) => {
   return <Input {...rest} />;
-}
-
-export default InputText;
+};

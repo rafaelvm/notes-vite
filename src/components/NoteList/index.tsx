@@ -1,12 +1,8 @@
 import { NoteListContainer } from "./styles";
-import NoteCard, { NoteCardProps } from "../NoteCard";
+import { NoteCard } from "../NoteCard";
+import { NoteListProps } from "./types";
 
-type NoteListProps = {
-  notesList: NoteCardProps[];
-  removeNote: (item: NoteCardProps) => void;
-};
-
-function NoteList({ notesList, removeNote }: NoteListProps) {
+export const NoteList = ({ notesList, removeNote }: NoteListProps) => {
   return (
     <NoteListContainer>
       {notesList.map((item, index) => {
@@ -21,6 +17,4 @@ function NoteList({ notesList, removeNote }: NoteListProps) {
       })}
     </NoteListContainer>
   );
-}
-
-export default NoteList;
+};

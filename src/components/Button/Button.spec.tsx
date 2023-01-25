@@ -1,5 +1,5 @@
 import { screen, render } from "@testing-library/react";
-import Button from ".";
+import { Button } from ".";
 
 const customRender = () => {
   return render(

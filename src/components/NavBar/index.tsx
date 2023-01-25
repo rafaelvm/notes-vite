@@ -1,6 +1,6 @@
 import { autoCapitalize } from "../../utils/autoCapitalize";
 import { useAuth } from "../../context/Auth";
-import Button from "../Button";
+import { Button } from "../Button";
 import { Container, ItemWrapper } from "./styles";
 
 export const NavBar = () => {

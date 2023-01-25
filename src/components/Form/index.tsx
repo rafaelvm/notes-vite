@@ -1,13 +1,13 @@
 import { ChangeEvent, useState } from "react";
 import { FormContainer } from "./styles";
 import { toast } from "react-toastify";
-import { NoteCardProps } from "components/NoteCard";
-import Button from "../Button";
-import InputText from "../InputText";
-import NoteList from "../NoteList";
+import { Button } from "../Button";
+import { InputText } from "../InputText";
+import { NoteList } from "../NoteList";
 import Textarea from "../Textarea";
+import { NoteCardProps } from "../NoteCard/types";
 
-export function Form() {
+export const Form = () => {
   const [note, setNote] = useState<NoteCardProps>({} as NoteCardProps);
   const [itemsList, setItemsList] = useState([]);
 
@@ -64,6 +64,4 @@ export function Form() {
       <NoteList notesList={itemsList} removeNote={removeNote} />
     </>
   );
-}
-
-export default Form;
+};

@@ -1,23 +1,15 @@
-import { ButtonHTMLAttributes } from "react";
 import { ButtonContainer } from "./styles";
+import { ButtonProps } from "./types";
 
-export type ButtonProps = {
-  variant?: "outlined" | "flat";
-  size?: "small" | "medium" | "large";
-  labelDescription?: string;
-} & ButtonHTMLAttributes<HTMLButtonElement>;
-
-function Button({
+export const Button = ({
   labelDescription,
   variant = "outlined",
   size,
   ...rest
-}: ButtonProps) {
+}: ButtonProps) => {
   return (
     <ButtonContainer variant={variant} size={size} {...rest}>
       {labelDescription}
     </ButtonContainer>
   );
-}
-
-export default Button;
+};
