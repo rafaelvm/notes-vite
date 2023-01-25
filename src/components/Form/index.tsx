@@ -40,14 +40,14 @@ export const Form = () => {
       <FormContainer>
         <InputText
           placeholder="Escreva seu título"
-          value={note?.title}
+          value={note?.title || ""}
           onChange={handleTitle}
           maxLength="20"
         />
         <Textarea
           placeholder="Escreva sua nota"
           rows="8"
-          value={note?.description}
+          value={note?.description || ""}
           onChange={handleDescription}
           maxLength="120"
         />
