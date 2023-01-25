@@ -1,24 +1,27 @@
 import { ThemeProvider } from "styled-components";
-import { Form } from "../src/components/Form";
+import { Router } from "../src/router";
 import { ToastContainer } from "react-toastify";
+import { AuthProvider } from "../src/context/Auth";
+import { NavBar } from "./components/NavBar";
 import theme from "./styles/theme";
-import GlobalStyle from "../src/styles/global";
 
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <ToastContainer
-        position="top-right"
-        autoClose={2000}
-        closeOnClick
-        theme="dark"
-      />
-      <div className="container">
-        <Form />
-      </div>
+      <AuthProvider>
+        <ToastContainer
+          position="top-right"
+          autoClose={2000}
+          closeOnClick
+          theme="dark"
+        />
+        <div className="container">
+          <NavBar />
+          <Router />
+        </div>
+      </AuthProvider>
     </ThemeProvider>
   );
 }
