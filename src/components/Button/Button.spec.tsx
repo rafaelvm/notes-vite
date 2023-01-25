@@ -8,12 +8,6 @@ const customRender = () => {
 };
 
 describe("<Button />", () => {
-  // it("should render default component", () => {
-  //   const wrapper = customRender();
-
-  //   expect(wrapper).toMatchSnapshot();
-  // });
-
   it("should render children", () => {
     customRender();
 
