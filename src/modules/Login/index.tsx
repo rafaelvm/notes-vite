@@ -1,39 +1,25 @@
-import { useAuth } from "../../context/Auth";
-import { ChangeEvent, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { Title, Wrapper } from "./styles";
-import { InputText } from "../../components/InputText";
 import { Button } from "../../components/Button";
+import { useLogin } from "./useLogin";
+import { Input } from "../../components/InputText/styles";
+import { ErrorMessage } from "../../components/ErrorMessage";
 
 export const Login = () => {
-  const [user, setUser] = useState("");
-  const { login } = useAuth();
-
-  const navigate = useNavigate();
-
-  const handleLogin = () => {
-    login(user);
-    navigate("/home");
-  };
+  const { handleSubmit, register, errors, onSubmit } = useLogin();
 
   return (
-    <Wrapper>
-      <Title>Login</Title>
-      <InputText
-        placeholder="Escreva seu nome"
-        type="text"
-        value={user}
-        onChange={(event: ChangeEvent<HTMLInputElement>) =>
-          setUser(event.target.value)
-        }
-      />
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <Wrapper>
+        <Title>Login</Title>
+        <Input
+          {...register("user")}
+          placeholder="Escreva seu nome"
+          type="text"
+        />
+        {errors?.user && <ErrorMessage message={errors?.user?.message} />}
 
-      <Button
-        onClick={handleLogin}
-        variant="flat"
-        labelDescription="Entrar"
-        disabled={!user}
-      />
-    </Wrapper>
+        <Button variant="flat" labelDescription="Entrar" type="submit" />
+      </Wrapper>
+    </form>
   );
 };
