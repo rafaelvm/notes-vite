@@ -1,7 +1,7 @@
 import { NotFound } from "../components/NotFound";
 import { useRoutes } from "react-router-dom";
-import { Form } from "../components/Form";
-import { Login } from "../components/Login";
+import { Form } from "../modules/Form";
+import { Login } from "../modules/Login";
 import { PrivateRoute } from "./PrivateRoute";
 
 export const Router = () => {
