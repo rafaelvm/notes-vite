@@ -4,14 +4,14 @@ import {
   UseFormHandleSubmit,
   UseFormRegister,
 } from "react-hook-form";
+import { schema } from "./validation";
+import { z } from "zod";
 
 export type UseLoginProps = {
   register: UseFormRegister<FieldValues>;
   handleSubmit: UseFormHandleSubmit<FieldValues>;
   errors: FieldErrors<FieldValues>;
-  onSubmit: (data: LoginFormValues) => void;
+  onSubmit: (data: LoginFormDataProps) => void;
 };
 
-export interface LoginFormValues extends FieldValues {
-  user?: string;
-}
+export type LoginFormDataProps = z.infer<typeof schema>;
