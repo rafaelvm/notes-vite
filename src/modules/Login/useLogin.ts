@@ -4,11 +4,9 @@ import { LoginFormDataProps, UseLoginProps } from "./types";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { schema } from "./validation";
-import { z } from "zod";
 
 export const useLogin = (): UseLoginProps => {
   const { login } = useAuth();
-
   const navigate = useNavigate();
 
   const onSubmit = (data: LoginFormDataProps) => {
